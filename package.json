@@ -1,0 +1,16 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "config": "^1.25.1",
+    "express": "^4.15.2"
+  }
+}
