@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never",
+      }
+    ],
+    "import/no-unresolved": 0,
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-top-level-hooks": "error",
+  },
+  "env": {
+    "mocha": true,
+  },
+  "plugins": ["mocha"],
+}

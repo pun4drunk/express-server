@@ -4,8 +4,8 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 
-// Get our API routes
-const api = require('./routes/api');
+// Get API routes
+const routes = require('./routes');
 
 const app = express();
 
@@ -14,14 +14,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Cross Origin middleware
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
-})
+});
 
-// Set our api routes
-app.use('/', api);
+// Set api routes
+app.use('/', routes);
 
 /**
  * Get port from environment and store in Express.
@@ -37,4 +37,4 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, () => process.stdout.write(`API running on localhost:${port}`));
